@@ -1,0 +1,24 @@
+{
+  "name": "contents",
+  "version": "1.0.0",
+  "description": "Contents Headless CMS Platform",
+  "main": "index.js",
+  "scripts": {
+    "redeploy": "cd web && npm i && npm run build",
+    "deploy": "gh-pages -d web/public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamlagos/contents.git"
+  },
+  "author": "William Oliveira de Lagos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamlagos/contents/issues"
+  },
+  "homepage": "https://github.com/williamlagos/contents#readme",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
