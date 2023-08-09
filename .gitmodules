@@ -1,6 +1,6 @@
 [submodule "web"]
 	path = web
 	url = git@github.com:williamlagos/contents-web.git
-[submodule "api"]
-	path = api
-	url = git@github.com:williamlagos/contents-api.git
+[submodule "django"]
+	path = django
+	url = git@github.com:williamlagos/contents-django.git
