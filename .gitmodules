@@ -1,9 +1,12 @@
 [submodule "web"]
 	path = web
 	url = git@github.com:williamlagos/contents-web.git
+	branch = master
 [submodule "api"]
 	path = api
 	url = git@github.com:williamlagos/contents-api.git
+	branch = master
 [submodule "demo"]
 	path = demo
 	url = https://github.com/williamlagos/labs
+	branch = master
