@@ -6,7 +6,3 @@
 	path = api
 	url = git@github.com:williamlagos/contents-api.git
 	branch = master
-[submodule "demo"]
-	path = demo
-	url = https://github.com/williamlagos/labs
-	branch = master
