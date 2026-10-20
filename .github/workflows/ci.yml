@@ -1,0 +1,54 @@
+name: Contents CI
+
+on:
+  push:
+    branches: ["master", "main", "feature/*"]
+  pull_request:
+    branches: ["master", "main"]
+
+jobs:
+  test-api:
+    name: Backend Tests (Django Ninja)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          pip install uv
+          cd api
+          uv pip install --system -e . -r requirements.txt pytest pytest-django ruff
+      - name: Lint with ruff
+        run: |
+          cd api
+          ruff check .
+          ruff format --check .
+      - name: Run unit & integration tests
+        run: |
+          cd api
+          pytest contents/tests.py
+
+  test-web:
+    name: Frontend Tests (React + Vite)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install node dependencies
+        run: |
+          cd web
+          npm ci
+      - name: Run unit tests with Jest
+        run: |
+          cd web
+          npm test -- --watchAll=false
+      - name: Build frontend bundle
+        run: |
+          cd web
+          npm run build
