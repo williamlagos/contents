@@ -45,9 +45,24 @@ Contents combines a modular React + Grommet frontend with a high-performance Dja
 
 ## Repository Structure
 
-- [`api/`](api/): Backend Django Ninja API with OpenAPI documentation at `/api/docs`.
-- [`web/`](web/): Frontend Single-Page Application (React, Vite, Grommet, Storybook, Jest, Cypress).
+- [`api/`](api/): Backend Django Ninja Headless CMS API with OpenAPI documentation at `/api/docs`, media asset pipeline, and category/slug routing.
+- [`web/`](web/): Frontend Single-Page Application & Web Starter (React 18, Vite, Grommet, typed `ContentsClient` SDK, Storybook, Jest, Cypress).
+- [`starters/`](starters/): Multi-platform client starter applications:
+  - [`starters/ios/`](starters/ios/): Native iOS & macOS starter built with **Swift 6**, **SwiftUI**, async/await, and `ContentsClient`.
+  - [`starters/android/`](starters/android/): Native Android starter built with **Kotlin**, **Jetpack Compose** (Material 3), Coroutines, and Coil.
 - [`deploy/gcp/`](deploy/gcp/): Production serverless deployment configuration for Google Cloud (Cloud Run, Cloud SQL, Firebase Hosting).
+
+---
+
+## Client Starters
+
+Contents provides pre-configured client starters with offline fallback and typed SDKs for immediate multi-channel development:
+
+| Platform | Technology | Features | Directory |
+|---|---|---|---|
+| **Web** | React 18 + Vite + Grommet | Typed TypeScript SDK, dynamic slug routes, category filters | [`web/`](web/) |
+| **iOS / macOS** | Swift 6 + SwiftUI | Actor-isolated async client, pull-to-refresh, AsyncImage | [`starters/ios/`](starters/ios/) |
+| **Android** | Kotlin + Jetpack Compose | Material 3, Coil image loading, search filtering | [`starters/android/`](starters/android/) |
 
 ---
 
